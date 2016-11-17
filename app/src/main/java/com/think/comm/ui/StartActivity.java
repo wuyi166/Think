@@ -17,7 +17,8 @@ public class StartActivity extends AppCompatActivity  implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        Intent intent  = new Intent(this,LiveActivity.class);
+      //  Intent intent  = new Intent(this,LiveActivity.class);
+        Intent intent  = new Intent(this,HomeActivity.class);
         startActivity(intent);
     }
 }

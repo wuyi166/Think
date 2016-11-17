@@ -13,6 +13,7 @@ import android.os.Process;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -195,6 +196,7 @@ public class LiveActivity extends Activity implements BVideoView.OnPreparedListe
      */
     private void initUI() {
         mPlaybtn = (ImageView)findViewById(R.id.play);
+        mPlaybtn.setOnClickListener(this);
         mController = (LinearLayout)findViewById(R.id.layout_bottom);
         mProgress = (SeekBar)findViewById(R.id.media_progress);
         mDuration = (TextView)findViewById(R.id.time_total);
@@ -231,15 +233,20 @@ public class LiveActivity extends Activity implements BVideoView.OnPreparedListe
     public void onClick(View v) {
 
             if(v.getId() == R.id.play) {
+                Log.e(TAG,"is play.....");
                 if (mPlayerEvent == PLAYER_EVENT.PLAYER_BUFFER) {
+                    Log.e(TAG,"is play....1.");
                     // Log.e(TAG,"is buffer.....");
                     return;
                 }
+                Log.e(TAG,"is play....2.");
                 if (mVV.isPlaying()) {
+                    Log.e(TAG,"is play....3.");
                     mPlaybtn.setImageResource(R.drawable.click_play_selector);
                     // 暂停播放
                     mVV.pause();
                 } else {
+                    Log.e(TAG,"is play....4.");
                     mPlaybtn.setImageResource(R.drawable.click_pause_selector);
                     // 继续播放
                     mVV.resume();
@@ -393,6 +400,7 @@ public class LiveActivity extends Activity implements BVideoView.OnPreparedListe
     @Override
     public boolean onInfo(int what, int extra) {
         // TODO Auto-generated method stub
+        Log.e(TAG,"waht:"+what+"    extra:"+extra);
         switch(what){
             /**
              * 开始缓冲
@@ -404,6 +412,9 @@ public class LiveActivity extends Activity implements BVideoView.OnPreparedListe
              * 结束缓冲
              */
             case BVideoView.MEDIA_INFO_BUFFERING_END:
+                mPlayerEvent = PLAYER_EVENT.PLAYER_PLAYING;
+                break;
+            case BVideoView.MEDIA_INFO_PLAYING_AVDIFFERENCE:
                 mPlayerEvent = PLAYER_EVENT.PLAYER_PLAYING;
                 break;
             default:

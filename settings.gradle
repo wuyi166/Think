@@ -1,1 +1,1 @@
-include ':app', ':thinkplay'
+include ':app', ':thinkplay', ':thinkcore'
