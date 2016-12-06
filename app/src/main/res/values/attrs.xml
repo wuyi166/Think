@@ -10,4 +10,15 @@
         <attr name="textColorSelected" format="color" />
         <attr name="badgeBackgroundColor" format="color" />
     </declare-styleable>
+
+
+    <declare-styleable name="FloatingToolbar">
+        <attr name="floatingToastOnLongClick" format="boolean"/>
+        <attr name="floatingHandleFabClick" format="boolean"/>
+        <attr name="floatingAutoHide" format="boolean"/>
+        <attr name="floatingMenu" format="reference"/>
+        <attr name="floatingItemBackground" format="reference"/>
+        <attr name="floatingCustomView" format="reference"/>
+    </declare-styleable>
+
 </resources>

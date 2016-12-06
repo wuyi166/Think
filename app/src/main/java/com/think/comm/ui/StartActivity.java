@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.think.player.LiveActivity;
+import com.think.comm.ui.test.menu.FmenuAvtivity;
 
 public class StartActivity extends AppCompatActivity  implements View.OnClickListener {
 
@@ -18,7 +18,8 @@ public class StartActivity extends AppCompatActivity  implements View.OnClickLis
     @Override
     public void onClick(View view) {
       //  Intent intent  = new Intent(this,LiveActivity.class);
-        Intent intent  = new Intent(this,HomeActivity.class);
+       // Intent intent  = new Intent(this,HomeActivity.class);
+        Intent intent  = new Intent(this,FmenuAvtivity.class);
         startActivity(intent);
     }
 }

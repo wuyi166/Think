@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ThinkCore</string>
+    <string name="accessibility_service_description">开启该功能能体验自动签到,抢红包等服务  自动优化内存让系统丝般润滑</string>
 </resources>
